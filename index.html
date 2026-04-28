@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smile Pages</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-title">Smile的Pages</a>
+      </div>
+      <nav class="sidebar-nav">
+        
+        <a href="index.html" class="nav-item active">欢迎</a>
+        <div class="nav-group">
+          <div class="nav-group-title" onclick="toggleGroup(this)">
+            <span>Agent笔记</span>
+            <span class="arrow">▶</span>
+          </div>
+          <div class="nav-group-items">
+            <a href="docs/agent/item1.html" class="nav-item">基于知识图谱的多样化习题自动生成</a>
+            <a href="docs/agent/item2.html" class="nav-item">知识增强，LLM，试题生成系统</a>
+            <a href="docs/agent/rag.html" class="nav-item">RAG随记</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title" onclick="toggleGroup(this)">
+            <span>古法coding</span>
+            <span class="arrow">▶</span>
+          </div>
+          <div class="nav-group-items">
+            <a href="docs/古法coding/数据结构.html" class="nav-item">数据结构</a>
+            <a href="docs/古法coding/基础算法.html" class="nav-item">基础算法</a>
+            <a href="docs/古法coding/python数据对象操作.html" class="nav-item">python数据对象操作</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title" onclick="toggleGroup(this)">
+            <span>应用场景</span>
+            <span class="arrow">▶</span>
+          </div>
+          <div class="nav-group-items">
+            <a href="docs/应用场景/大数据评估-气象灾害与铁路韧性.html" class="nav-item">大数据评估-气象灾害与铁路韧性</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="content" id="content">
+      
+        <div style="text-align:center;padding-top:80px;">
+          <h1 style="font-size:2rem;color:#4A9E5C;margin-bottom:1rem;">你好，</h1>
+          <p style="color:#666;font-size:1.1rem;margin-bottom:2rem;">这里是smile的pages。</p>
+          <p style="color:#999;font-size:0.9rem;margin-bottom:5rem;">左侧边栏可展开。</p>
+
+          <p style="color:#666;font-size:1.1rem;margin-bottom:1rem;">🐧1345119185</p>
+          <p style="color:#666;font-size:1.1rem;margin-bottom:1rem;">📮1345119185@qq.com</p>
+        </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="doc-content">
+    <h1>基于知识图谱的多样化习题自动生成</h1>
+<p>基于知识图谱的多样化习题自动生成</p>
+<p>通用基础：基于知识图谱的文本生成</p>
+<p>图数据->文本</p>
+<p>知识图谱</p>
+<p>KG=(V,R)，V是实体。一条知识用三元组表示，（es,r,eo），es是主体，eo是客体，表示关系r从es指向eo。</p>
+<p>则KGNLG的任务是从输入知识图谱子图，生成与之语义一致的文本序列</p>
+<p>3.2 模型架构</p>
+<p>GAT 图注意力网络</p>
+<p>传统做法：GNN，能更好表示输入，但计算慢；jointGT引入transformer能提升效果、减少计算成本。</p>
+<p>GAT引入多头注意力机制，聚合邻居信息时动态分配邻居节点之间的权重，不像GNN通常赋予固定的权重。</p>
+<p>对于节点i，对每个邻居节点计算注意力系数，再与权重参数矩阵相乘，加权更新中心节点i。</p>
+<p><img src="../../ext/kg/word/media/image1.png" style="max-width:100%;border-radius:8px;"></p>
+<p>整体架构</p>
+<p>基于编码器-解码器的T5语言模型，按照jointGT方法，基于若干个任务，学习图结构关系和文本表示。编码器部分引入GAT图注意力机制，增强表示学习和图-自然语言文本对齐能力。</p>
+<p><img src="../../ext/kg/word/media/image2.jpeg" style="max-width:100%;border-radius:8px;"></p>
+<p>模型训练</p>
+<p>数据集：WebNLG数据；异常值、缺失值处理</p>
+<p>levi图转换：知识图谱->新的图表示。就是把KG中的关系也变成节点，r(es→eo)变成es→r→eo。</p>
+<p>预训练任务：目标是同时训练图encoder、序列decoder，学习图文对齐关系，即学习KG的深层语义、将语义转换为文本的能力 。</p>
+<p>1.图重构任务：掩码部分图结构，让模型还原完整KG；学习图理解能力。</p>
+<p>2.图文匹配任务：判断给定KG子图和文本序列是否匹配；学习图文一致理解能力。</p>
+<p>评价指标：</p>
+<p>1.BLEU，评估参考文本与生成文本的ngram重叠</p>
+<p>2.METEOR，综合考虑词汇精确度、句子流畅度，对比参考与生成的相似度。</p>
+<p>3.ROUGE，比较参考与生成文本的相似度</p>
+<p><img src="../../ext/kg/word/media/image3.png" style="max-width:100%;border-radius:8px;"></p>
+<p>试题场景：基于知识图谱的试题生成</p>
+<p>KG子图->试题-答案对(T,A)</p>
+<p>数据：OpenKG平台数据集</p>
+<p>创建KG：整理为图数据库支持的格式；清洗。==>三元组。写入neo4j</p>
+<p>按涉及实体分类：</p>
+<p>单实体提问：针对一个实体的属性、与邻居节点的关系提问。</p>
+<p>多实体提问：多实体及其关系，更可能贴近实际</p>
+<p>基础做法：图查询+模板组合</p>
+<p>单实体提问</p>
+<p>对实体的属性提问</p>
+<p>cypher查询语言，从KG获取实体的属性。</p>
+<p>结合模板，生成相关问题（如xx的xx是什么？），属性作为正确答案。</p>
+<p>对于选择题，用KG中其他信息，或随机生成错误选项。</p>
+<p>对与邻居关系的提问</p>
+<p>cypher从KG获取关系信息。</p>
+<p>结合模板生成问题-答案对，如xx是否为xx的xx？-是。</p>
+<p>多实体提问</p>
+<p>和上面一样，也是用cypher查询语句获取多实体及其关系。</p>
+<p>结合llm做法：llm辅助生成</p>
+<p>构造prompt</p>
+<p>单实体提问：cypher查询语句+查询结果+引导语</p>
+<p>多实体提问：cypher查询语句+查询结果json文件+引导语 如任务要求</p>
+<p>这篇论文的prompt没有特别设计，只是引导语，简单说明了任务。</p>
+<p>评估</p>
+<p>专家评测法。</p>
+<p><img src="../../ext/kg/word/media/image4.png" style="max-width:100%;border-radius:8px;"></p>
+<p>不足：事实性幻觉、知识图谱内部信息错误、与LLM自身知识冲突等</p>
+<p>系统开发</p>
+  </div>
+</body>
+</html>

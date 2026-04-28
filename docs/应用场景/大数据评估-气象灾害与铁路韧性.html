@@ -1,0 +1,748 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>气象灾害与铁路韧性</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1e8f76e2-bace-80f2-8800-ef4645c10cae" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🌪️</span></div><h1 class="page-title" dir="auto">气象灾害与铁路韧性</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">文献1：AI在灾害管理中的应用</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80fc-ac4c-c48066977dfe" class="">①概述了AI在减灾、备灾、应灾和灾后恢复四个灾害管理阶段的应用（不同AI技术的应用实例、在不同阶段的优势）②归纳出实用型决策支持工具③提出了未来挑战。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-808e-8ccb-f428d583e67f" class="">大多数AI应用集中在灾害响应阶段。</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">1 背景</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8097-971c-d5516798f266" class="">自然灾害损失严重，需要消耗大量救援和管理力量。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8032-9401-d7afda35a518" class="">灾害管理会用到灾害过程产生的大量的真实数据和模拟数据，高效获取和处理大数据非常重要，所以AI越来越受欢迎。真实数据来自于社交媒体、电信数据、遥感等信息通信技术的进步；模拟数据是为了弥补真实数据稀缺的情况，用于灾害估算。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80fd-9f48-de4ebcc827af" class="">很少研究通过综合分析损失、基础设施和数据三者，来从灾害管理的不同阶段的角度来分析。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">2 基础</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">2.1 AI方法 AI methods</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8098-bce0-cc91ef53172b" class="">介绍了AI方法有哪些。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8056-8f85-dd627ec1d660" class="">AI方法分为6类：有监督模型、无监督模型、深度学习、强化学习、深度强化学习和优化方法。</p></div><div style="display:contents" dir="auto"><ul id="1e8f76e2-bace-8092-84c4-d2b8a69bb571" class="toggle"><li><details open=""><summary>2.1.1 有监督模型 Supervised models</summary><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-801b-8455-dbc39b7ed728" class="">基于有标签的人工输入数据，进行回归、分类等，用于信息提取、计算机视觉、语音识别等。</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1e8f76e2-bace-8096-b913-eecbfba5ec81" class="toggle"><li><details open=""><summary>2.1.2 无监督模型 Unsupervised models</summary><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80a7-9940-fd3a1c2a374b" class="">基于无标签数据。用于数据降维、特征提取聚类。</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1e8f76e2-bace-806a-afc1-c51df44343ce" class="toggle"><li><details open=""><summary>2.1.3 深度学习  Deep learning</summary><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8073-b8df-da0fbf6cbc5d" class="">使用多层结构逐步提取特征，应用范围广泛。</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1e8f76e2-bace-8095-985f-f9588bc28d32" class="toggle"><li><details open=""><summary>2.1.4 强化学习 Reinforcement learning</summary><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80f5-86dc-c972014b4072" class="">通过惩罚、奖励等强化方法学习，用于不确定复杂情景下的系列决策。</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1e8f76e2-bace-801c-8a7f-f4da66c22ad8" class="toggle"><li><details open=""><summary>2.1.5 深度强化学习 Deep Reinforcement Learning</summary><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80c4-a515-d7af7d4cb739" class="">在复杂连续任务问题上性能很好，需要大量训练数据和时间，成本较高。</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1e8f76e2-bace-80db-8250-fc45a93fe8f4" class="toggle"><li><details open=""><summary>2.1.6 优化 Optimization</summary><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80c4-8662-fff73600bf6d" class="">是大多数AI方法的基本要素，目的是找到由目标函数表示的最佳模型。</p></div></details></li></ul></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">2.2 灾害管理相关概念</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80a4-bb5e-e7927ed87a83" class="">2.2.1 灾害管理4阶段：减灾、备灾、应灾和灾后恢复。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80b4-ab91-cd93a7437803" class="">2.2.2 灾害管理与灾害韧性（抗灾能力）</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8094-8011-d87a96a69db1" class="">提高社区的灾害韧性是灾害管理的目标。介绍了对灾害韧性的不同定义，比如5个角度定义。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8055-9104-fc4543abf6d9" class="">现有许多为了提高灾害韧性的研究和实例，总之它们表现出AI赋能的潜力。</p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">3 灾害管理应用</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-807f-afbb-cec1a98c2bde" class="">图3是AI应用于灾害管理不同阶段的出版物数理增长趋势，显示了①AI在灾害管理的应用出版物越来越多；②集中于应灾阶段。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8001-bc0f-f48acf9718b6" class="">介绍了案例资料选取方法。选了6类26种AI方法，4阶段17个应用领域，以此为关键词检索文献，对应用示例画了AI方法-应用领域的连线图。详见表1。</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">3.1 减灾阶段 mitigation</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80f7-a12b-cb034ab4542e" class="">监督模型、无监督模型被应用于领域1＞2、3&gt;&gt;4；强化学习、深度强化学习应用很少。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8073-bbb9-feb78e3bd5cc" class="">1：绘制各种易感性地图。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-808c-9488-f61b60e9deb4" class="">2、3：脆性曲线、广义回归模型、决策树、贝叶斯加法回归树、空间回归、RF、神经网络。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80b0-b6f2-f10872abac09" class="">4：确定管理重点、估算居民需求、聚类算法分析远程图像、优化算法制定恢复计划。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">3.2 备灾阶段 preparedness</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8036-b259-fec47d6fa118" class="">5-确定灾难来临 6-预警 7-应急培训和工具 8-疏散准备</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8026-8490-eea41359d256" class="">5、6、8&gt;&gt;7</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-800c-ae7c-ce2b3736a20c" class="">5、6：通常依赖专家分析传感器测量结果，AI可以经济高效地替代。如飓风轨迹、地震、洪水。如堤坝异常检测组件、推文语义分析报告系统、物联网和云网络灾情共享。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8025-a214-d64613be8327" class="">8：确定何时启动逆流车道帮助沿海飓风撤离、确定最佳疏散路径。方法有SVM、DT、NN、RL、优化等。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">3.3 应灾阶段</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-807d-9c16-fc6151ecc2e3" class="">9-事件地图 10-损毁评估 11-救灾和调配 12-信息系统和跨部门协同 13-民情和心理分析 </p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8092-8929-db90f8f199ef" class="">应用于9、10（灾害感知）较多的是有监督模型、无监督模型、DL，其他很少；大多数AI方法应用于11；监督模型和DL主要用于12、13。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-8051-be57-f3539b5b3236" class="">9、10：基于卫星、无人机、机器人、社交媒体持续产生的大量灾害数据绘图。如计算机视觉、分类器算法、前后特征提取对比、专门数据库…</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80a1-9615-e11ca65e8d40" class="">11：①数据导向：基于社交媒体、机器人、手机数据。流行的 AI 方法包括分类器、强化学习、深度强化学习和其他情绪分析技术。也有隐私担忧。②机器人导向：深度学习用于机器人搜救</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80c7-9a7c-ece24b7e8d32" class="">12：①通讯：电话呼叫语音识别和NLP、手机位置信息跟踪。②信息共享和协调：共享信息管理平台、数据共享和协作分析。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80f5-be27-e0b8be5ef9ba" class="">13：分析社媒数据（情感文本、图像、时间、地理位置信息）跟踪公众反应、识别人口流动时空规律。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">3.4 灾后恢复</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-8080-a3d9-e5144d118e68" class="">灾后恢复需要很长时间，包括很多步骤，所以需要AI缩短时间、提供支持。</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-8073-8e86-c6d46e84c5a7" class="">14-评估影响 15-制定恢复计划 16-恢复过程跟踪 17-估计损失和修复成本</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-807b-af5a-e381e68a48a7" class="">14&gt;其他。</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-8075-bc22-ee2f51cea74d" class="">14：物理损害（肉眼检查工作量巨大，AI分析航拍图像、社媒图像、传感器数据减少人工劳力；AI跟踪人类活动模式）、心理困扰（常用的是调查法，监督和无监督模型有助于调查结果分析以确定风险因素、评估预防性干预的有效性）、经济混乱（监督模型用来定量确定关键因素的影响，以制定经济刺激措施）</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-80be-a386-efee8a08f643" class="">15：大多采用优化技术确定有效的恢复计划，如遗传算法、模拟退火等，很少应用强化学习/深度强化学习。</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-808f-84a0-d4722860a16e" class="">16：需要通过各种指标、分析多源数据。常用监督模型和深度学习算法。如社媒数据的情感分析、图像分类用于灾难恢复跟踪、夜光数据与经济指标之间的回归关系、google街景跟踪恢复进度等。</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-8081-8619-cbb37efe2917" class="">17：已经比较成熟。主要基于真实数据，所以大数据为AI在此应用提供了更多机会。如监督模型用于快速处理影像，检测结构损坏、修复需求、估计成本；监督模型用于分析恢复资金分布的历史数据，进行预算分配、处理保险索赔。</p></div><div style="display:contents" dir="auto"><p id="1e8f76e2-bace-803d-bf97-fb71a94ac142" class="">18：数据挖掘识别潜在诈骗、谣言；机器学习对比前后卫星图像，帮助保险公司、执法机构检查被淹房屋索赔的真实性。</p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">实用型 AI 决策支持工具</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-8060-8510-c82583586aa1" class="">检索了相关AI工具案例，归纳在表5。总体趋势是在应灾阶段的工具最多；大多数工具的输入数据是社媒数据，小部分是传感器测量、遥感、手机数据。</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">具体工具：</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-8052-8ac4-fa7ffcc601f6" class="">预测危险情境的后果，以在减灾、备灾阶段制定计划。如软件模拟灾后医疗需求和资源的变化，帮助调度和紧急情况应对；文本音频和位置信息的高效综合平台；实时手机数据帮助高效响应；基础设施数据和历史灾难数据预测损坏后果；灾难响应人工智能 （AIDR）自动对推文和航空图像众包信息分类，确定受灾者和基础设施受损；地理数据可视化界面；深度学习模拟人类行为和流动；通过受灾照片评估堤坝年限。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">挑战性问题：</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-806e-9cdb-d936c957c9b4" class="">1.需要大量输入数据，但数据类型和格式多样，对不同社区的适用性有限，不准确，所有权问题。→制定政策规范数据收集、清理、存储和管理。</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-80b3-b81e-dff4c384b6d6" class="">2.不同社区受灾情况不同，针对一个社区开发的AI决策支持工具可能不适用其他社区。</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-803b-a697-de52024fea1c" class="">3.需要高水平部署能力、先进软件和高性能计算机，对普遍用户和落后地区不友好。</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-80af-8a90-fc42a2fd9ac9" class="">一些已有工作正在努力提高AI模型在支持灾害管理上的可解释性、可重复性。</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-803b-82ea-fc9f00dd7575" class="">
+</p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">结语</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-80a1-9715-f9630b659650" class=""> 6类-17种AI方法，四个灾害管理阶段-26个应用领域。AI 模型的分析结果对于支持灾害管理非常有用，但其结论是否完全可靠有待讨论。</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-8024-857d-e614baa5a199" class="">
+</p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-80fb-b956-d77855c61e3b" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1e9f76e2-bace-80bd-a6cb-d5449b6ce9e1" class="">
+</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">文献2：AI和机器学习驱动的GIS在气候变化下主动灾害抵御的应用</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-8019-8eb3-ca69da6842d7" class="">探讨了在气候变化增大灾害危害的情况下，将AI和ML与GIS相结合以增强灾害管理和抗灾能力的机遇（8个）和挑战（4个）。</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">引言</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-80b2-a07e-e76d6fa60524" class="">GIS长期用于灾害管理，但有局限性，如难以实时处理大量数据、预测复杂情形等，而AI、ML和GIS的协同+高质量数据可以解决。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">研究方法</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-80eb-932a-f85483a26eb4" class="">系统选择综述文章的方法。</p></div><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-8057-b299-c6fd37ebf1cc" class="">2.1 数据收集<div class="indented"><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-8015-b310-fe9084d688df" class="">采用系统证据综合报告标准（ROSES）框架，检索2012-2024年相关实证研究文章。</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-80d7-bc94-f4f898c8fa88" class="">2.2 数据筛选<div class="indented"><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-804c-a4d6-f244e958a4c5" class="">676篇→71篇</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-8000-bee5-d8ba429c0618" class="">2.3 分析<div class="indented"><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-8000-837c-d26ca533aaa0" class="">演绎法和诱导编码法。</p></div><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-80c3-95ab-f1dda6547842" class="">识别整理文献里的相关段落，按AI、ML和GIS的机遇和挑战分类。</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-809f-8395-ffe0359e3cb3" class="">2.4 局限<div class="indented"><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-8019-b72d-c49af0a4788e" class="">检索广度：不考虑会议论文和书籍；仅英文；相关概念未被纳入</p></div></div></p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">结果</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">机遇</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-8064-90a9-c76f04c58124" class="">1-灾害管理与风险评估（21）：三者结合是关键工具。如AI和ML分析卫星图像、传感器数据和社媒数据等庞大数据集，脆弱性地图用于资源分配、基建规划</p></div><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-8028-b7b8-d60a4634aea7" class="">2-洪水风险管理（27）：提高预测准确性；随机森林、SVM和人工神经网络ANN用于分析大数据集中的洪水复杂模式；ANN+GIS+分析网络流程（ANP）用于洪水易发区分类</p></div><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-80d1-ac42-d6f16f2a6018" class="">3-滑坡易感性预测（26）：提高准确性，如特殊雷达+XGBoost算法、深度学习等</p></div><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-80a9-896f-f152ec4521fc" class="">4-创新可视化技术（8）：如CNN+GIS及时检测森林受损区域；增强现实+VR提高用户参与度、只管呈现复杂空间数据</p></div><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-8014-92e5-f1fb44386c0d" class="">5-实时监测与预警系统（8）：处理多源实时数据以提高灾害响应准确性、及时性，如加强跨机构合作和实时情报、利用实时居民数据加强预测检测和评估、AI+ML分析社媒数据以有效检测和响应地区灾难。</p></div><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-804b-a259-c9bbf6e52b01" class="">6-数据处理与分析效率（8）：相较传统方法更适合复杂模式，如集合ML算法综合多模型提高洪水易感性绘图的预测准确性。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">挑战</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1eaf76e2-bace-8057-a8f9-ee1bb33d1a7b" class="">1-数据质量和准确性问题（26）<div class="indented"><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-80c9-a220-da076bd1007f" class="">导致结果不可靠→有害的灾难管理决策</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-802b-8159-d93603e3c48e" class="">2-处理技术门槛（30）<div class="indented"><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-800e-83aa-de4a668468b1" class="">需要更强的处理能力和广泛的专业技术知识</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-801a-89bc-d20f4797bd9f" class="">3-隐私安全问题（20）<div class="indented"><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-806d-a691-f85ab94ef18b" class="">地理空间信息含有高分辨率卫星图像和位置信息；个人敏感信息未经授权使用；地理空间信息管理不当导致决策不可靠；AI和ML需要密切监控和检验。</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-80e2-aa08-f3563d323b63" class="">4-可解释性和可靠性问题<div class="indented"><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-8030-89fa-f2f4307d3b9b" class="">高风险情况如滑坡预测、洪水灾害管理，模型的互相可解释性和可靠性很重要；黑箱性质导致决策者理解不充分，阻碍实际应用</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-8028-8a29-ff0fb7ff3a3b" class="">5-大量数据和计算资源需求<div class="indented"><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-807a-9f9d-edeffa7694f8" class="">数据或算力有限时，模型的适用性和可靠性大受影响；数据集需要标注一致性和统一性；模型遇到噪声或数据缺失，会出现稳健性问题，这在实际应用中很常见。</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-80bc-a544-e266743c9bf5" class="">6-伦理社会问题<div class="indented"><div style="display:contents" dir="auto"><p id="1ecf76e2-bace-803a-ab21-db5c04a9ce58" class="">需要专家、决策者和利益相关者参与，确保技术被负责任地应用：数据隐私和安全问题；模型结果对弱势群体构成边缘化劣势；重大灾害期间的故障风险要求人类监督。</p></div></div></p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">讨论</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1eef76e2-bace-8046-8d15-f39c34528dca" class="">三者结合在灾害管理上很有潜力，但是也存在挑战。</p></div><div style="display:contents" dir="auto"><p id="1eef76e2-bace-80d9-8bd8-e056648a68a6" class="">技术案例展示，如印尼用GIS+社交媒体提升海啸预警；机器学习用在洪水和滑坡预测上；CNN、RNN等深度学习方法需要较多资源，容易过拟合<div class="indented"><div style="display:contents" dir="auto"><p id="1eef76e2-bace-80ea-a979-f8a1223a541a" class="">能源与韧性：三者结合通过优化灾后电力等资源配置来提升韧性</p></div><div style="display:contents" dir="auto"><p id="1eef76e2-bace-8072-89bb-c5c83c1ea5ff" class="">伦理问题：数据泄露、系统被滥用、机器代替人类判断等可能导致负面后果</p></div><div style="display:contents" dir="auto"><p id="1eef76e2-bace-8002-9eb8-c3730f846f47" class="">偏见与公平：AI偏见会直接导致救灾资源分配不公，所以模型需要防止偏见，采取多样数据、参与式设计、人类审核机制</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1eef76e2-bace-80b2-9086-f5389d59b598" class="">未来方向<div class="indented"><div style="display:contents" dir="auto"><p id="1eef76e2-bace-8092-8e9d-ec1a4cdf70c6" class="">提高数据质量→传感器和高分辨率数据支持→模型接入系统→推广应用：统一标准和框架</p></div></div></p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><p id="1eef76e2-bace-805b-9297-d1579cf96cf1" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

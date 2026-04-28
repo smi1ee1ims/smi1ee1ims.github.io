@@ -1,0 +1,1098 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>pta记录</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1b1f76e2-bace-80f0-82c6-ed57214e43c5" class="page serif"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/woodcuts_4.jpg" style="object-position:center 60%"/><h1 class="page-title" dir="auto">pta记录</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-8098-844f-d4579e94109b" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-8052-90ac-d8654953fa29" class="">1.列表按索引排序</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8062-893b-c583d9c4673c" class="">1）reverse<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8081-bd44-fbcf998fce26" class="">a=[1,2,3,4,5]</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80d3-a2cd-f03091cb67e5" class="">a.reverse</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8072-8c24-c13176265bcf" class="">print(a)</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80d8-b2da-d5a83c6ce538" class="">a=[5,4,3,2,1]</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-800b-b78d-f8a9e62667ae" class="">2）sorted<div class="indented"><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-8085-adb1-fc3bd384a2d7" class="">一维列表：</p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-803f-b7d8-e6e5a0b8b6a5" class="">lst_sorted=sorted(lst,key=len,)</p></div><div style="display:contents" dir="auto"><p id="1c8f76e2-bace-8042-9c6f-f1d37728c7af" class="">lst=lst.<mark class="highlight-blue"><strong>reversed</strong></mark>()  这个是直接取反。</p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-80cb-b96a-eb8bc1857799" class="">二维列表：</p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-801f-89c5-fd54028802af" class="">主要关键字，升序1</p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-809c-9984-e1bf14d64393" class="">lst_sorted=sorted(lst,key=lambda x:(x[0]))</p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-8033-baf9-f1afc67791fd" class="">主要关键字，降序2</p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-8093-9a68-f7e0e1bb73be" class="">lst_sorted=sorted(lst,key=lambda x:(x[0])，reverse=False)</p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-8066-b19d-f5c41d7974c5" class="">含次要关键词，先降序后升序</p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-8029-8980-d83b2ee7b25b" class="">lst_sorted=sorted(lst,key=lambda x:(<mark class="highlight-blue"><strong>-x[0]</strong></mark>,x[1]))</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8033-ab87-e85afd8041e0" class="">3）类似的，字典的排序：<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8010-9ae1-c9f436ec77ad" class="">按键排序：<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80ba-8548-c52efd1e83c5" class="">dict_sorted=sorted(dict.items())</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-802d-bf61-cd71ef41bb59" class="">按值排序：<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80f1-bb9b-f93915cb7f06" class="">dict_sorted=dict( sorted( dict.items, lambda x:x[1]) )</p></div></div></p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80ef-b0c5-d56594f83b74" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-806e-a7e0-dfefa8b1e884" class="">2.列表操作<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8067-9ffe-d757cd7395ad" class="">删除：a.pop(index)<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80f6-be88-f859e3e2533a" class="">a=[1,2,3,4,5]</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80b1-89cb-c45eddfc9929" class="">a.pop(0)→a=[2,3,4,5]</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80a6-996f-f7021ec0994f" class="">a.pop()→a=[2,3,4]</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-805a-bd32-ed960be79e23" class="">最值：<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-805f-86fb-cadf1bfe3b71" class="">a=[1,2,3,4,5]</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-808c-a57a-f19d23edea5b" class="">max(a)→5</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8058-9dfe-fee80d77711a" class="">min(a)→1</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-802e-96b0-ffd9ce692e46" class="">清除：a.clear()<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80f6-af33-e1377a79c4de" class="">a=[]</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8044-a59a-d03569e7b0a4" class="">高级操作：<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-807a-9416-f6c93b4b9b44" class="">a=[1,2,3,4,5]</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-803d-a0f3-d7c809e245b8" class="">1）b=[表达式  for语句]<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-809b-a78e-de2eaf4b064d" class="">b=[i*i for i in a]</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80c1-9a44-dd1df4129e32" class="">b=[1,4,9,16,25]</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80db-a614-d778db898383" class="">2）b=[表达式   if…else…语句   for语句]<div class="indented"><div style="display:contents" dir="auto"><p id="1b5f76e2-bace-801d-85c0-d9f9889767f2" class="">或b=[表达式   for语句  if语句]</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8018-9680-f5153ad99b26" class="">b=[i*i if i&lt;3 else i*2 for i in a]</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-806c-ad28-db4856bf8fa6" class="">b→[1,4,6,8,10]</p></div></div></p></div><div style="display:contents" dir="auto"><p id="30ef76e2-bace-8090-baf6-e7d0c29c021c" class="">3）倒叙<div class="indented"><div style="display:contents" dir="auto"><p id="30ef76e2-bace-802a-955a-e1e34b7b6d7a" class="">lst=lst[::-1] 表示倒序</p></div></div></p></div><div style="display:contents" dir="auto"><p id="30ef76e2-bace-803c-8698-d893677352f3" class=""><mark class="highlight-red"><mark class="highlight-default_background"><strong>4）原位操作</strong></mark></mark><div class="indented"><div style="display:contents" dir="auto"><p id="30ef76e2-bace-80c8-9a1d-e92908d104d7" class="">就是变量的id固定了，只能改动这个变量，不能把新的值赋给这个变量，同时这个变量的改动也是联动的。</p></div><div style="display:contents" dir="auto"><p id="30ef76e2-bace-80c7-86ec-dbc117fcd5b9" class=""><mark class="highlight-red">要想不联动地原位改变数组，只能通过切片方式：</mark></p></div><div style="display:contents" dir="auto"><p id="30ef76e2-bace-8080-ac9d-f6b2b768a53f" class=""><mark class="highlight-red">lst[index]=xxx，而lst= xxx这种直接操作变量的任何方法都无效，lst=lst[:]，lst+[xxx]也都无效。</mark></p></div><div style="display:contents" dir="auto"><p id="30ef76e2-bace-8037-835a-c23da4fa80a6" class="">
+</p></div></div></p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80e9-9b11-f4412c9c52f7" class="">List是可传递赋值的。</p></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-80c2-ba35-eb9a3507b6fa" class="">lst=[1,2,3,4,5]</p></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-8061-b094-f0041df12cdd" class="">lst[0]=3</p></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-80b0-b907-d9280b461a8e" class="">→lst=[3,2,3,4,5]</p></div><div style="display:contents" dir="auto"><p id="308f76e2-bace-809f-ba03-daac39f38772" class="">
+</p></div><div style="display:contents" dir="auto"><p id="308f76e2-bace-80db-b732-d31b6ab8a952" class="">list去重：</p></div><div style="display:contents" dir="auto"><p id="308f76e2-bace-8026-8962-cca8c5d24a02" class="">nums=list(set(nums))</p></div><div style="display:contents" dir="auto"><p id="1daf76e2-bace-805d-9ad7-d65dc68006f5" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8091-b8e7-f75ac850329a" class="">3.元组tuple<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8083-b1d3-da0edc60c43b" class="">只能查，不能增删改</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-801b-a02c-f3f349313c85" class="">max/min</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80af-80df-eafe156dd99a" class="">len()</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-800c-a934-f2bc06b48821" class="">in</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8010-b9d8-d14026d41173" class="">4.集合set<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8068-8d42-e340b2795139" class="">增：set.add(item)</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8033-844c-dac536713be1" class="">删：set.pop() 随机一个<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8014-9846-cf05b1a3bd29" class=""><mark class="highlight-red"><strong>set.remove(item)</strong></mark></p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-801d-8754-e38b8c47fe01" class=""><mark class="highlight-red"><strong>改：set.update(item)</strong></mark><div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8069-82c8-ccd301cd0404" class=""><mark class="highlight-red"><strong>set.update( {item1,item2})</strong></mark></p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8035-8d17-c824d1fd9696" class="">查：不可</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8064-a697-f568704c82dd" class="">逻辑运算：<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80dc-aa68-efe2b568ca68" class="">a={1,2,3,5}  b={1,3,4}</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-809d-a5e2-f9931efd523f" class="">a-b 减/差集。   ={2,5}</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8027-9d06-c5795e70e353" class="">a|b 或/并集。   ={1,2,3,4,5}</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80ff-9af9-ead77e66363a" class="">a&amp;b 与/交集。  ={1,3}</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8090-b3e6-dde986b6b26d" class="">a^b 异或。a和b不能同时都有。  ={2,4,5}</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8034-8f7a-da499fd1973c" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8096-b712-fff396f2346f" class="">
+</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8025-b00b-deb0b9fb6f71" class="">函数：<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80bf-be99-ecf1f7c8fe69" class="">len(),max(),min()</p></div></div></p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80f6-9b8e-dd1dc7d647cd" class="">5.字典dictionary<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-806c-8396-fd022837f60e" class="">创建：dict=dict(zip(lst1,lst2))</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80ed-a6f7-e6527bc48333" class="">查：dict[key]=?</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8047-965d-dbe1dc42d228" class="">增：dict[new_key]=new_value</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8095-bfd8-eb2ff392721a" class="">改：dict[key]=value</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8026-94a9-c48114299b67" class=""><mark class="highlight-red"><strong>删：dict.pop(key)</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-808f-a31b-c2dd20dd820d" class="">元素存在：key in dict=True/False</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8070-aab9-d65f81045f68" class="">遍历：<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-809c-aa77-cc2d69b548f9" class="">键—</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80a4-adcd-d40d9f60e0c6" class="">for key in dict:</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-809f-8dd5-e6a8cc2085f7" class="">值—</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8097-be14-cffd7ff7d0a0" class="">for value in dict.values():</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80f5-b610-c54ffec5703c" class="">键值—</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-801f-9248-fe73e97225d6" class="">for key,value in dict.items():</p></div></div></p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8012-8370-e47602a19bcd" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8056-9909-e95d6189d947" class="">6.字符串<div class="indented"><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8006-a221-d357cd635409" class="">len()</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80d0-b51f-d26504c804b7" class="">max()</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8008-8da1-fc82eebb8bf5" class="">min()</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80c3-895b-f7df0c80f2d4" class="">s.split(’,’) 分割</p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80db-86b2-cf901bc2de8d" class=""><mark class="highlight-purple"><strong>s.count(“A”) 查找“A”，返回个数</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80cc-a444-fb6b01f49d36" class=""><mark class="highlight-purple"><strong>s.isupper()=True/False 是否都是大写</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8003-ac69-c636d8c657c7" class=""><mark class="highlight-purple"><strong>s.islower() 是否都是小写</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-800b-962e-e643f1450d88" class=""><mark class="highlight-purple"><strong>s.isdigit() 是否都是数字</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8082-861e-d9309b0e54b0" class=""><mark class="highlight-purple"><strong>s.upper() 全部变大写</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80e6-bca8-edc87f476ba7" class=""><mark class="highlight-purple"><strong>s.lower() 全部变小写</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-806e-a2b6-e82807a95c7c" class=""><mark class="highlight-purple"><strong>s.strip() 去掉左右两端的空格</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8046-86b3-e6da0d7774a7" class=""><mark class="highlight-purple"><strong>s.lstrip() 去掉左边的空格</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80be-bf07-fca571e25d50" class=""><mark class="highlight-purple"><strong>s.rstrip() 去掉右边的空格</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8088-a820-d65b2b8e56fb" class=""><mark class="highlight-purple"><strong>s.swapcase() 大写变小写，小写变大写</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-80e2-9d95-e06187c33a8e" class=""><mark class="highlight-purple"><strong>s.replace(old,new) 替换 </strong></mark></p></div></div></p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8058-8ec9-f3ab7e4ef2f8" class="">
+</p></div><div style="display:contents" dir="auto"><h2 id="1b2f76e2-bace-80ad-9d55-f9c4aff13c63" class="">联合数据结构</h2></div><div style="display:contents" dir="auto"><p id="1b2f76e2-bace-8001-a76d-c26148e42dcb" class="">1.数组array和链表linkedlist<div class="indented"><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8003-a043-cccfccb912bd" class="">python实现：deque</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80e0-837f-d86ee626792d" class="">append()</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8008-90f5-f96fa19ceb79" class="">insert(pos,value)</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80de-960f-e4c11044c1ac" class="">remove(element)</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80c1-9092-ebc915345894" class="">区别</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8007-9641-d5ac9f40e3a2" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8072-bdec-f5d67aacffde" class="">2.哈希表<div class="indented"><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-807b-aa36-d2f72ef52b55" class="">在python中等同于dictionary</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-804b-bdd3-e0e930595357" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80db-8f63-cd6cc811a3d0" class="">3.队列queue </p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80cd-ba82-d3c6ecbbcbdf" class="">FIFO<div class="indented"><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-800e-95b7-fd588f086056" class="">常用在BFS</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8046-bb87-dbedeff37b1d" class="">在python有两种表示：list,deque.</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80a7-a856-c79339fbf327" class="">list: FIFO<div class="indented"><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8064-8763-c55239d28d40" class="">lst.append() 右边进</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80e3-a40b-de57b6717d97" class="">lst.pop(0) 左边出</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-804e-8ebd-d0466c3c60f0" class="">缺点：pop()会更慢</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8053-93ff-f95051192d2d" class="">deque: 双端队列，两边都可以进出，但是在队列时用FIFO<div class="indented"><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80ff-82fb-e064a6e951dd" class=""><mark class="highlight-purple"><strong>from collections import deque</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80a2-9e70-d1dee261add9" class="">创建：q=deque([1,2,3])</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-800d-91e7-c5d1f7342988" class="">增/进队：q.append(？) 右进<div class="indented"><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8030-a745-eb5dff947270" class="">q.appendleft(？) 左进</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8047-b4d7-f77db09e5edb" class="">删/出队：q.pop() 右出<div class="indented"><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8057-95a5-f84b1b4ef95e" class="">q.popleft() 左出</p></div></div></p></div><div style="display:contents" dir="auto"><ul id="1b3f76e2-bace-8006-bbe6-e8ce8222884b" class="bulleted-list"><li style="list-style-type:disc">因为是FIFO，所以一般append()和popleft()搭配，或者appendleft()和pop()搭配</li></ul></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-80d8-a7cc-cc96d65600e4" class="">max()/min()/len()</p></div></div></p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-80b5-9f58-fcca0ddeb7b8" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b1f76e2-bace-801c-bb38-cf21757e96ce" class="">4.栈stack<div class="indented"><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80a2-94a9-cfe97abee7ac" class="">FILO</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8088-a403-e76902df153b" class="">常用在DFS</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-809c-a37d-cecbd756b2ba" class="">在python有两种表示：list,deque.</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-807b-9f3e-c0d9561ce795" class="">list: append()、pop()即可，且都比较快</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8040-a387-e88b8e9e2328" class="">deque: append()和pop()搭配，appendleft()和popleft()搭配</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8090-841e-d6ad5be3b153" class="">
+</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8052-89dd-d4472d72920b" class="">5.树tree<div class="indented"><div style="display:contents" dir="auto"><p id="1b4f76e2-bace-807a-b009-d1a12d07e3d5" class="">可用字典实现</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80f0-9415-ef4535e2ec11" class="">父亲节点/子节点</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8048-ab1f-e9d08011ddb2" class="">根节点/叶子节点</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8086-aaf1-f2a463d1c9ed" class="">二叉树：普通二叉树/满二叉树/完全二叉树（每层从左到右不能跳）</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8085-a6ea-c418a47ae7ae" class="">高度/深度/层</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8034-87ef-fa289d6504a1" class="">遍历顺序：<div class="indented"><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-804d-85aa-ec772f56e868" class="">前序遍历 L，从根节点开始，关键点出现位置：根……左……右</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80bf-a7b0-d602a1734d09" class="">中序遍历 ^，从最左边开始，关键点出现位置：左……根……右</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80bb-9866-cc0c0c6e31e7" class="">后序遍历 _| ，从最左边开始，关键点出现位置：左……右……根</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80e2-9b08-db8393a5b576" class="">遍历算法：<div class="indented"><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-80b9-a85f-e8e901dbc9e5" class="">BFS</p></div><div style="display:contents" dir="auto"><p id="1b3f76e2-bace-8095-81d5-e15c26e1a605" class="">DFS</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b4f76e2-bace-800a-901e-e563a686b2d5" class="">父链遍历：用字典的get方法，如&lt;子：父&gt;的键值对存在parent字典，则current=parent.get(current,None)表示向上遍历父节点，是一种迭代。<div class="indented"><div style="display:contents" dir="auto"><p id="1b4f76e2-bace-8049-a468-e781a755eb17" class="">None参数是指父节点不存在时的返回值，所以如果直接用parent[current]方法会报错。</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1b4f76e2-bace-802f-932c-f528c7d51f21" class="">子链遍历：和父链遍历类似，但往往需要额外维护一个字典记录子关系，否则直接从父链遍历子链的话时间复杂度较高。</p></div></div></p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">链表</summary><div class="indented"><div style="display:contents" dir="auto"><p id="30ff76e2-bace-80db-9650-cf970fd2c149" class="">头插法。</p></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-8013-8aed-f4eb3f69a66c" class="">两链相交问题：双指针遍历相遇。</p></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-80a8-a9ea-e67c7621043a" class="">逆转链表问题：遍历，分析，逐步处理</p></div><div style="display:contents" dir="auto"><p id="310f76e2-bace-803e-af82-f610a8d698e8" class="">环判断问题：1）哈希集合法。2）标记法，把遍历过的节点都指向一个特殊的值，如头节点，如果遍历到已经指向这个特殊值的节点，说明回到之前遍历过的位置了，说明存在循环。  </p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">图graph</summary><div class="indented"><div style="display:contents" dir="auto"><ul id="1b6f76e2-bace-8095-b577-c42f07a4632a" class="toggle"><li><details open=""><summary>python实现：字典，</summary><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" integrity="sha512-AKaNmg8COK0zEbjTdMHJAPJ0z6VeNqvRvH4/d5M4sHJbQQUToMBtodq4HaV4fa+WV2UTfoperElm66c9/8cKmQ==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="1b6f76e2-bace-80cf-8f5d-d8011c10dc18" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">graph={
+	&#x27;A&#x27;: [&#x27;B&#x27;,&#x27;C&#x27;,&#x27;F&#x27;],
+&#x27;B&#x27;:[’A’,’C’,’D’],
+&#x27;C&#x27;:[’A’,’B’,’D’],
+&#x27;D&#x27;:[’B’,’C’,’F’],
+&#x27;F&#x27;:[’A’,’D’]
+}</code></pre></div></details></li></ul></div><div style="display:contents" dir="auto"><p id="1b6f76e2-bace-8048-8ab8-d2d86e47e92e" class="">
+</p></div><div style="display:contents" dir="auto"><ul id="1b6f76e2-bace-80fa-99ac-dc7c6086002b" class="toggle"><li><details open=""><summary>dijkstra模板（基础，懒惰找最短路径）：</summary><div style="display:contents" dir="auto"><pre id="1bff76e2-bace-8057-a0fe-e64dbc46de27" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">import sys
+ 
+def dijkstra(graph, start_node):
+    unseen = {node: sys.maxsize for node in graph}  # 初始化所有节点距离为无穷大
+    unseen[start_node] = 0  # 起始节点距离为0
+    shortest_paths = {start_node: (0, [])}  # 起始节点的路径和距离
+ 
+    while unseen:
+        current_node = min(unseen, key=unseen.get)  # 找到未访问节点中距离最小的节点
+        current_distance = unseen[current_node]
+ 
+	        for neighbor, distance in graph[current_node].items():
+            if neighbor not in unseen: 
+	            continue  # 已访问过的节点跳过
+		        new_distance = current_distance + distance
+            if new_distance &lt; unvisited_nodes[neighbor]:  # 如果找到更短路径，更新
+                unvisited_nodes[neighbor] = new_distance
+                shortest_paths[neighbor] = (new_distance, shortest_paths[current_node][1] + [current_node])  # 更新路径和距离
+ 
+        unvisited_nodes.pop(current_node)  # 当前节点已访问过，从未访问节点中删除
+ 
+    return shortest_paths  # 返回最短路径和距离
+ 
+# 测试Dijkstra算法
+if __name__ == &quot;__main__&quot;:
+    graph = {
+        &#x27;A&#x27;: {&#x27;B&#x27;: 2, &#x27;C&#x27;: 9},
+        &#x27;B&#x27;: {&#x27;A&#x27;: 2, &#x27;D&#x27;: 4, &#x27;E&#x27;: 8},
+        &#x27;C&#x27;: {&#x27;A&#x27;: 9, &#x27;E&#x27;: 10, &#x27;F&#x27;: 3},
+        &#x27;D&#x27;: {&#x27;B&#x27;: 4, &#x27;E&#x27;: 1, &#x27;G&#x27;: 5},
+        &#x27;E&#x27;: {&#x27;B&#x27;: 8, &#x27;C&#x27;: 10, &#x27;D&#x27;: 1, &#x27;F&#x27;: 11, &#x27;G&#x27;: 6, &#x27;H&#x27;: 12},
+        &#x27;F&#x27;: {&#x27;C&#x27;: 3, &#x27;E&#x27;: 11, &#x27;H&#x27;: 17},
+        &#x27;G&#x27;: {&#x27;D&#x27;: 5, &#x27;E&#x27;: 6},
+        &#x27;H&#x27;: {&#x27;E&#x27;: 12, &#x27;F&#x27;: 17},
+    }
+    start_node = &#x27;D&#x27;
+    shortest_paths = dijkstra(graph, start_node)
+    print(shortest_paths)</code></pre></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-806c-a198-d23d330aad2a" class="">
+</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b6f76e2-bace-8079-826a-c54543f84b3b" class="toggle"><li><details open=""><summary>BFS模板:</summary><div style="display:contents" dir="auto"><pre id="1b6f76e2-bace-8004-9f17-fe79807b61f4" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">def bfs(graph,start):
+	q=[]
+	q.append(start)
+	seen=set()
+	seen.add(start)
+	while q:
+		vertex=q.pop(0)
+		nodes=graph[vertex]
+		for node in nodes:
+			if node not in seen:
+				q.append(node)
+				seen.add(node)
+		print(vertex,den=&#x27; &#x27;)</code></pre></div></details></li></ul></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-8068-aee7-eecb0628679d" class="">
+</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">树Tree</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">二叉树前中后遍历 模板</summary><div class="indented"><div style="display:contents" dir="auto"><p id="30ff76e2-bace-80e2-ac69-fc5ce4c2ed89" class="">都是基于栈。</p></div><div style="display:contents" dir="auto"><ul id="30ff76e2-bace-80af-93ca-c27395a7e7a7" class="toggle"><li><details open=""><summary>LEETCODE版本（自定义数据结构）</summary><div style="display:contents" dir="auto"><p id="30ff76e2-bace-80b6-90d8-fd6f9941474b" class="">中序</p></div><div style="display:contents" dir="auto"><pre id="30ff76e2-bace-80ac-86f5-f0f371316a74" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">class:
+	self.val
+	self.left
+	self.right
+	
+cur=root
+res=[]
+stack=[]
+while stack or cur:
+	while cur: #取尽左子树，悉数入栈
+		stack.append(cur)
+		cur=cur.left
+	cur=stack.pop() #取最新节点，入答案序列
+	res.append(cur.val)
+	cur=cur.right #检查右子树
+	
+return res </code></pre></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-80d6-857d-fa2a19d3d0a5" class="">前序</p></div><div style="display:contents" dir="auto"><pre id="30ff76e2-bace-80bd-9371-e167f871507a" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">cur=root
+stack=[root]
+res=[]
+
+while cur or stack:
+	cur=stack.pop()
+	while cur:
+		res.append(cur.val)
+		if cur.right:
+			stack.append(cur.right)
+		cur=cur.left
+return res</code></pre></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-8039-aea5-cba3db19a1ec" class="">后序</p></div><div style="display:contents" dir="auto"><pre id="310f76e2-bace-807d-b7c3-fe45a3dab058" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">cur=root
+stack=[]
+res=[]
+
+while cur ot stack:
+	while cur:
+		stack.append(cur)
+		if cur.left:
+			cur=cur.left
+		if cur.right:
+			cur.right
+	cur=stack.pop()
+	res.append(cur)
+	if stack[-1].left==cur:
+		cur=stack[-1].right
+	else:
+		cur=None
+		
+return res</code></pre></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-80ab-b4cb-ed91d5c0d116" class="">
+</p></div></details></li></ul></div><div style="display:contents" dir="auto"><pre id="1c0f76e2-bace-8024-8be8-d7b979de31f9" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all"># PTA版本，树存成字典
+seen=set()
+current=backs[-1]
+stack=[current]
+layers=[]
+while len(seen)&lt;n:
+    current=stack.pop(0)
+    layers.append(current)
+    l,r=tree[current]
+    if l:
+        stack.append(l)
+    if r:
+        stack.append(r)
+    seen.add(current)
+print(&quot; &quot;.join(map(str,layers)))
+
+
+	</code></pre></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">翻转二叉树/镜像树</summary><div class="indented"><div style="display:contents" dir="auto"><p id="312f76e2-bace-80a8-ae2c-dfdeb21a9892" class="">DFS法</p></div><div style="display:contents" dir="auto"><pre id="312f76e2-bace-8000-91f4-e0c09c112748" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">#递归
+def invertTree(self,root):
+	cur=root
+	if not cur:
+		return
+	left=cur.left #暂存左节点，用于左右交换的中间变量。也可以等号赋值交换
+	cur.left=self.invertTree(cur.right)
+	cur.right=self.inverTree(left)
+	return cur</code></pre></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">数组转二叉搜索树模板（含重复值）：</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1bff76e2-bace-80de-846f-d164522dd9d4" class="">节点：   val:[left,right]</p></div><div style="display:contents" dir="auto"><p id="1d8f76e2-bace-8090-a101-c46a89621605" class="">或者用递归方法，先有序化，则中间为根节点。分割为左右两个子树，再取中间，又是子树的根节点……这样递归直到只剩一个节点，每个子树的根节点都确定了，其实树也就确定了，剩下的左右两边只剩一个节点，就是左右叶子了。</p></div><div style="display:contents" dir="auto"><pre id="1bff76e2-bace-8064-a3aa-fd6a31749d0a" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">def binary_search_tree(arr):
+    bst={}
+    id=0
+    bst[id]=[None,arr[0],None]
+    
+    for val in arr[1:]:
+        id+=1
+        current_id=0
+        while True:
+            current_val=bst[current_id][1]
+            if val &lt; current_val:
+                if bst[current_id][0] is None:
+                    bst[current_id][0]=id
+                    bst[id]=[None,val,None]
+                    break
+                else:
+                    current_id=bst[current_id][0]
+            else:
+                if bst[current_id][2] is None:
+                    bst[current_id][2]=id
+                    bst[id]=[None,val,None]
+                    break
+                else:
+                    current_id=bst[current_id][2]
+    return bst</code></pre></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">中序+后序→还原二叉树 模板。</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-8057-ae49-db73895a8548" class="">思路可以草稿演算一下。</p></div><div style="display:contents" dir="auto"><pre id="1c0f76e2-bace-802e-bd9b-feb3c385ef01" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">global tree
+tree={}
+
+def build_tree(backs,mids):
+    head=backs[-1]
+    left_mids=[]
+    i=0
+    while mids[i]!=head:
+        left_mids.append(mids[i])
+        i+=1
+    right_mids=mids[i+1:]
+    
+    left_backs=[]
+    i=0
+    while backs[i] in left_mids:
+        left_backs.append(backs[i])
+        i+=1
+    right_backs=backs[i:-1]
+    # print(backs,mids)
+  
+    if len(right_backs)+len(left_backs)==0:
+        tree[head]=[None,None]
+        return 0
+    else:
+        if len(right_backs)==0:
+            tree[head]=[left_backs[-1],None]
+            build_tree(left_backs,left_mids)
+        elif len(left_backs)==0:
+            tree[head]=[None,right_backs[-1]]
+            build_tree(right_backs,right_mids)
+        else:
+            tree[head]=[left_backs[-1],right_backs[-1]]
+            build_tree(left_backs,left_mids)
+            build_tree(right_backs,right_mids)</code></pre></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">非全部连通图的BFS</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-8031-857f-cece8081f738" class="">先构建邻接矩阵adj，再对探索每个连通图、分别遍历</p></div><div style="display:contents" dir="auto"><p id="1c2f76e2-bace-803d-8b5d-f555c2db5e12" class="">（111,L2-207）</p></div><div style="display:contents" dir="auto"><pre id="1c2f76e2-bace-8076-8e2d-d7a4a98ac30a" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all"># 1.构建邻接矩阵
+adj={}
+for person in people:
+    if person not in adj:
+        adj[person]=[]
+    dad,mom,_,kids,_,_=tree[person]
+    if dad!=&#x27;-1&#x27;:
+        adj[person].append(dad)
+        if dad not in adj:
+            adj[dad]=[]
+        adj[dad].append(person)
+    if mom!=&#x27;-1&#x27;:
+        adj[person].append(mom)
+        if mom not in adj:
+            adj[mom]=[]
+        adj[mom].append(person)
+    for kid in kids:
+        adj[person].append(kid)
+        if kid not in adj:
+            adj[kid]=[]
+        adj[kid].append(person)
+# 2.BFS
+seen=set()
+families=[]
+for person in people:
+    if person not in seen:
+        family=[]
+        queue=[person]
+        while queue:
+            current_person=queue.pop(0)
+            family.append(current_person)
+            seen.add(current_person)
+            for neighbor in adj[current_person]:
+                if neighbor not in seen:
+                    seen.add(neighbor)
+                    queue.append(neighbor)
+        families.append(family)</code></pre></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">前序+中序→二叉树（无重复值）模板：</summary><div class="indented"><div style="display:contents" dir="auto"><pre id="1c2f76e2-bace-8092-bb8c-fafb26368a75" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">def build_tree(mids,forwards):
+    head=forwards[0]
+    mids_left=[]
+    for i in range(len(mids)):
+        cur=mids[i]
+        if cur != head:
+            mids_left.append(cur)
+        else:
+            break
+    mids_right=mids[i+1:]
+    
+    len_l=len(mids_left)
+    len_r=len(mids_right)
+    fwd_left=forwards[1:1+len_l]
+    fwd_right=forwards[1+len_l:]
+    if fwd_left and fwd_right:
+        tree[head]=[fwd_left[0],fwd_right[0]]
+        build_tree(mids_right,fwd_right)
+        build_tree(mids_left,fwd_left)
+    elif fwd_left:
+        tree[head]=[fwd_left[0],None]
+        build_tree(mids_left,fwd_left)
+    elif fwd_right:
+        tree[head]=[None,fwd_right[0]]
+        build_tree(mids_right,fwd_right)
+    else:
+        tree[head]=[None,None]</code></pre></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">前序+中序→镜像翻转二叉树模板：（无重复值）</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-802f-b88e-cb35eb39a343" class="">【和上一个仅有个别左右调换的区别】</p></div><div style="display:contents" dir="auto"><pre id="1c2f76e2-bace-80e1-a38c-c917b85ad49d" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">def build_tree2(mids,forwards):
+    head=forwards[0]
+    mids_left=[]
+    for i in range(len(mids)):
+        cur=mids[i]
+        if cur != head:
+            mids_left.append(cur)
+        else:
+            break
+    mids_right=mids[i+1:]
+    
+    len_l=len(mids_left)
+    len_r=len(mids_right)
+    fwd_left=forwards[1:1+len_l]
+    fwd_right=forwards[1+len_l:]
+    if fwd_left and fwd_right:
+        tree2[head]=[fwd_right[0],fwd_left[0]]
+        build_tree2(mids_right,fwd_right)
+        build_tree2(mids_left,fwd_left)
+    elif fwd_left:
+        tree2[head]=[None,fwd_left[0]]
+        build_tree2(mids_left,fwd_left)
+    elif fwd_right:
+        tree2[head]=[fwd_right[0],None]
+        build_tree2(mids_right,fwd_right)
+    else:
+        tree2[head]=[None,None]</code></pre></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">树的BFS【限制层数】</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-80d3-b444-e75ec9046dc8" class="">以不超过5层为例。需要用元组附带层数信息。</p></div><div style="display:contents" dir="auto"><pre id="1c4f76e2-bace-80c1-a40f-c573bae7f040" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">family1=set()
+family2=set()
+queue=[(id1,1)]#关键！！！
+while queue:
+    current,generation=queue.pop(0)
+    if generation&gt;5:
+        break
+    family1.add(current)
+    iddad,idmom=nets[current][1],nets[current][2]]
+    if iddad != &#x27;-1&#x27;:
+        queue.append((iddad,generation+1))#关键！！！
+    if idmom != &#x27;-1&#x27;:
+        queue.append((idmom,generation+1))#关键！！！</code></pre></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">算法 </summary><div class="indented"><div style="display:contents" dir="auto"><p id="30bf76e2-bace-807e-89a1-edd25da68b66" class="">模拟真人解决任务的思维方式，算法化。特别是想象成一个业务员操作顺序，“做完你的做你的”。</p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">双指针</summary><div class="indented"><div style="display:contents" dir="auto"><p id="30af76e2-bace-8020-89a7-cb621bf134b6" class="">关键：<br/>初始化位置。i,j分别在两端，还是在同一端？</p></div><div style="display:contents" dir="auto"><p id="30af76e2-bace-8015-a4d8-e36e578db63c" class="">遍历过程：i,j移动，一定会经过最佳位置。只需要判断是每一步是该i移还是j移动。<div class="indented"><div style="display:contents" dir="auto"><p id="30ff76e2-bace-8088-9203-e08f6adcc344" class="">如果i,j初始在两端，那就交替往中间移动。</p></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-80f2-98e1-c3924880dc99" class="">如果i,j在一段，那就都往另一边移动。</p></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-800b-b36c-dad14ce28045" class="">还有可能从中间往两边。</p></div></div></p></div><div style="display:contents" dir="auto"><p id="30af76e2-bace-80ad-977a-df212115007c" class="">移动的规则：到底这次谁移动。往往是做比较，选出两个情况中的一种。</p></div><div style="display:contents" dir="auto"><p id="30af76e2-bace-80f1-9d77-ed2e529c22fd" class="">优化目标：<div class="indented"><div style="display:contents" dir="auto"><p id="30af76e2-bace-8023-9841-d2e6c0b4ffc8" class="">·贪心算法。需要求出最优情况的i,j位置。需要思考一下，哪一种移动，对于最优化目标没用，那么就不要这样移动。</p></div><div style="display:contents" dir="auto"><p id="30af76e2-bace-80f5-a93f-f18136da2ca6" class="">·数据处理。通过双指针把一个数据处理成指定格式的数据。一般i就是“当前加工位置”，j往后推，用来和i比对是否需要加工。</p></div></div></p></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-808e-bae7-eb0cbaab35ea" class="">应用：<div class="indented"><div style="display:contents" dir="auto"><p id="30ff76e2-bace-808a-a975-c788570f345c" class="">滑动窗口（前缀和，覆盖子串（结合哈希）等））</p></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-8042-8022-f2e987e4bc5e" class="">接雨水（两边往中间交替）</p></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-80b0-91c0-f85fe9709338" class="">相交链表（求交点，双指针分别从两个链表头遍历，再遍历对方链表，相遇时即交点）</p></div></div></p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">贪心算法</summary><div class="indented"><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">活动选择问题</summary><div class="indented"><div style="display:contents" dir="auto"><pre id="1d7f76e2-bace-80eb-aa3d-c741659612e5" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all"># 按照结束时间排序，优先选择结束时间靠前的且和上一个不冲突的。
+
+# 读取
+applys=[]
+for i in range(n):
+	start,end=map(int,input().split())
+	applys.append((start,end))
+prev_end=0
+cnt=0
+for i in range(n):
+	start,end=applys[i]
+	if start&gt;prev_end:
+		cnt+=1
+		prev_end=end
+		
+	print(cnt)  #最大可选的活动数量</code></pre></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">哈夫曼编码（堆排序）</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-80b3-ac4c-c0acfb074d4f" class="">要求构成哈夫曼树，往左为0，往右为1，节点的编码形如1010。越小的节点编码越大。</p></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-805f-b852-d6e75e964e3e" class="">输入：字典结构的节点键值。 {&#x27;A&#x27;: 45, &#x27;B&#x27;: 13, &#x27;C&#x27;: 12, &#x27;D&#x27;: 16, &#x27;E&#x27;: 9, &#x27;F&#x27;: 5}</p></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-8056-b65a-dda8a929acc6" class="">输出：键 编码。</p></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-80ae-82c2-f97e3453dfbc" class="">注：heapq.heapify后会自动排序，之后pop出的一定是最小的。这样处理后heap就不再是单纯的list了，不能直接用list下标了，要用pop弹出。</p></div><div style="display:contents" dir="auto"><pre id="1d7f76e2-bace-80b9-845e-d36b890fbedc" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">tree={&#x27;A&#x27;: 45, &#x27;B&#x27;: 13, &#x27;C&#x27;: 12, &#x27;D&#x27;: 16, &#x27;E&#x27;: 9, &#x27;F&#x27;: 5}
+
+import heapq
+# 构建堆排序的序列基础
+heap=[[weight,(key,&#x27;&#x27;)] for key,weight in tree.items()
+# 堆排序，使得形成一个上大下小的堆。
+heapq.heapify(heap)
+#每次取最小的两个节点（节点块）弹出，直到只剩一个节点则说明完成排序编码。
+while len(heap)&gt;1:
+	low1=heapq.heappop(heap)
+	low2=heapq.heappop(heap)
+	# 最小的往左子树放，编码添0
+	for item in low1[1]:
+		item[1]=&#x27;0&#x27;+item[1]
+	for item in low2[1]:
+		item[1]=&#x27;1&#x27;+item[1]
+	# 两个最小节点合并，重新压入堆中
+	# 前面的weight按值相加，后面的节点序列则是拼接合并。
+	new_node=[low1[0]+low2[0]]+low1[1:]+low2[1:]
+	# 新节点压入堆中，此时堆的长度已经-1了。
+	heapq.heappop(heap,new_node)
+	
+# 最后排序输出(先按编码的长度排序，再按编码值排序，最后就是按值从大到小的序列)
+heap=sorted(heapq.heappop(heap)[1:],key=lambda x:(len(x[1]),x)</code></pre></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">滑动窗口</summary><div class="indented"><div style="display:contents" dir="auto"><p id="30cf76e2-bace-80a4-9e9d-c176c9032c13" class="">在一个长的串里，找出满足条件的短串。</p></div><div style="display:contents" dir="auto"><p id="30cf76e2-bace-8026-9670-ca452570d8c5" class="">关键就是左右边界的进、出。左边往左一个，窗口内就少一个元素，其他不变；右边往右一个，窗口内就多一个元素，其他不变。</p></div><div style="display:contents" dir="auto"><p id="30ff76e2-bace-80eb-81db-f571cb6bcd63" class="">结合 双指针、哈希</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">前缀和</summary><div class="indented"><div style="display:contents" dir="auto"><p id="30cf76e2-bace-8039-a4ee-f84907c1221b" class="">定义：一个数组里，一个元素前面所有数字的和，包含自身。用一个list来记录每个位置的前缀和。<mark class="highlight-red">通常会在前缀和list前面补一个0，用来兼容首个位置。</mark></p></div><div style="display:contents" dir="auto"><p id="30cf76e2-bace-807e-ad7d-fc3210719aa5" class="">作用：快速计算某个窗口的和。有点像求落差。这样，sum( list[ i:j+1 ] )=qzh[ j ]-qzh[ i ]</p></div><div style="display:contents" dir="auto"><p id="30cf76e2-bace-8055-8e04-c00fa9e49b74" class="">结合 双指针、哈希。</p></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">递归</summary><div class="indented"><div style="display:contents" dir="auto"><p id="313f76e2-bace-80a0-a8c2-de9ab2ee59be" class="">常见的递归模型，本质就分两种：</p></div><div style="display:contents" dir="auto"><ul id="313f76e2-bace-80b4-a25c-c739a0ef515b" class="bulleted-list"><li style="list-style-type:disc">一种是阶乘公式，<code>f(n) = n * f(n-1)</code>；</li></ul></div><div style="display:contents" dir="auto"><ul id="313f76e2-bace-803c-85e4-d4b42cfe1d07" class="bulleted-list"><li style="list-style-type:disc">另一种是斐波那契公式，<code>f(n) = f(n - 1) + f(n - 2)</code>。一般情况下，还需要处理本层的任务，因此，扩展公式是：<code>f(n) = n + f(n - 1) + f(n - 2)</code>。</li></ul></div><div style="display:contents" dir="auto"><ul id="313f76e2-bace-8017-ba40-e8d669b7ac5c" class="bulleted-list"><li style="list-style-type:disc">把要解决的问题，抽象为数学模型描述，如果可以用以上两种公式模型套进去，就可以用递归。</li></ul></div><div style="display:contents" dir="auto"><p id="313f76e2-bace-801a-a740-d8956f65918b" class="">比如这道题，本质就是阶乘的模型，当前问题是 <code>f(n)</code>，从 list1 和 list2 中找出较小的那个，作为 n，剩下的所有节点构成的问题作为 <code>f(n-1)</code>。最终，<code>f(n) = 找出 n + 解决 f(n-1)</code>。</p></div><div style="display:contents" dir="auto"><p id="313f76e2-bace-8064-bac7-deaf5501f23a" class="">再比如汉诺塔问题，本质就是斐波那契模型的扩展公式。</p></div><div style="display:contents" dir="auto"><p id="313f76e2-bace-8093-94f0-e9f37ceb6a62" class="">
+</p></div><div style="display:contents" dir="auto"><p id="313f76e2-bace-80ec-9aa9-f9020196e4c5" class="">leetcode体系里，class里面可以方法里面再写方法，不一定只能用给的方法递归</p></div><div style="display:contents" dir="auto"><p id="313f76e2-bace-80db-b527-c5cc90ef6364" class="">也可以在给的方法外面加方法、加__init__初始化属性。</p></div><div style="display:contents" dir="auto"><p id="313f76e2-bace-8094-b41e-f11a2ff8ddd8" class="">如</p></div><div style="display:contents" dir="auto"><pre id="313f76e2-bace-8049-9b74-e9bb3a8fe093" class="code code-wrap"><code class="language-python" style="white-space:pre-wrap;word-break:break-all">class xxx(self,,,,):
+	def __init(self,x,x,x):
+		self.x=xxx
+		…….
+		
+	def Function(self,x,x,x):
+		def recursion(x,x):
+			if …..:
+				return 0
+			self.sideFunction(…..)
+			return recursion(x,x)
+		return
+		
+	def sideFunction(self,x,x,x):
+		return</code></pre></div><div style="display:contents" dir="auto"><p id="313f76e2-bace-8013-b717-f654dc73eae6" class="">
+</p></div></div></details></div></div></details></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">超时问题解决方案：</summary><div class="indented"><div style="display:contents" dir="auto"><p id="1bef76e2-bace-800d-8f3d-dc2c0ccb4626" class="">1.not in 判断用集合，不用链表。<div class="indented"><div style="display:contents" dir="auto"><p id="1bef76e2-bace-80da-9f84-dcef44243852" class="">判断元素not in 集合为O(1)，用list则为O(N)。</p></div><div style="display:contents" dir="auto"><p id="1bef76e2-bace-80bc-9f0e-dcc40f643266" class="">创建seen的时候用seen=set()。</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1bef76e2-bace-80e7-8463-c94b2457f8e7" class="">2.遍历节点时，一次性读取当前节点的值和next节点。【显著提高速度】<div class="indented"><div style="display:contents" dir="auto"><p id="1bef76e2-bace-80e5-a727-c489699e7cce" class="">不要循环开始先读取值，循环末尾再读取下一次值。</p></div><div style="display:contents" dir="auto"><p id="1bef76e2-bace-8014-85cd-d2259cb90d65" class="">例如：</p></div><div style="display:contents" dir="auto"><p id="1bef76e2-bace-8094-859c-e4192a5fa7e4" class=""># chain={node:(value,nextloc)}</p></div><div style="display:contents" dir="auto"><p id="1bef76e2-bace-805f-aced-c72bb6dc1679" class="">cuurent_value,nextloc=chain[current]</p></div><div style="display:contents" dir="auto"><p id="1bef76e2-bace-8029-b5d2-fdde9586a46a" class="">#current_value=value,nextloc=nextloc</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1bef76e2-bace-80fa-86db-fcf2255c5c08" class="">3.去除冗余的列表【显著】<div class="indented"><div style="display:contents" dir="auto"><p id="1bef76e2-bace-806e-bc66-eb955a6d695f" class="">修改算法后，不需要的数据结构不要再维护了。</p></div><div style="display:contents" dir="auto"><p id="1bef76e2-bace-8089-8d27-c4dbad12d46d" class="">比如l1.append(node)如果已经用不到了，但是这个简单的append()操作还是会显著增加运行用时。</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1bff76e2-bace-8047-9968-cced03d996cc" class="">4.剪枝【显著】【字符串处理】<div class="indented"><div style="display:contents" dir="auto"><p id="1bff76e2-bace-806b-9b6a-ee54b791ce88" class="">例如113（L2-008）,当字符串剩下的部分不可能再产生最大值了，就不往下遍历了。</p></div><div style="display:contents" dir="auto"><p id="1bff76e2-bace-806f-bd56-ea3aa2aa564d" class="">虽然只是在部分退出，没有改变时间复杂度的等级，但是实际上减小了时间复杂度。</p></div></div></p></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">非零返回原因</summary></details></div><div style="display:contents" dir="auto"><p id="1bef76e2-bace-8001-aee7-d655eb783ed8" class="">1.int和float问题<div class="indented"><div style="display:contents" dir="auto"><p id="1bef76e2-bace-806d-b903-d1e6c9b17a79" class="">涉及除法，最好整数型也都用float。</p></div><div style="display:contents" dir="auto"><p id="1bef76e2-bace-8069-a282-e699f0fa3dd3" class="">比如读取输入，就可以用lst=map(<mark class="highlight-blue"><strong>float</strong></mark>,input().split())</p></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-8090-a9dd-e4813810ae8d" class="">
+</p></div></div></p></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-8088-be53-eeb232412be2" class="">读取图结构一定要注意下标！构建图的key一定要和后面读取操作的key下标范围一致。</p></div></div></details></div><div style="display:contents" dir="auto"><p id="1d7f76e2-bace-80a9-8298-cb7570410d50" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
