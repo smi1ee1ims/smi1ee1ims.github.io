@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="doc-content">
+    <h1>neo4j docker使用文档</h1>
+<p>创建一个新的neo4j数据库（容器）流程：</p>
+<p>1.在shell创建容器：</p>
+<p>docker run -d --name [容器名] --restart=always --publish=7476:7474 --publish=7689:7687 `<br>
+--env NEO4J_AUTH=neo4j/12345678 `<br>
+--volume=D:\Desktop\学校\大四\毕业论文\project\[容器名]\data:/data `<br>
+--volume=D:\Desktop\学校\大四\毕业论文\project\[容器名]\conf:/var/lib/neo4j/conf `<br>
+--volume=D:\Desktop\学校\大四\毕业论文\project\[容器名]\logs:/logs `<br>
+neo4j:5.26.19</p>
+<p>挂载到了本地目录，这个图谱的数据等会存到本地的对应路径下：</p>
+<p>数据：C:\Users\lenovo\neo4j\data:/data</p>
+<p>配置：C:\Users\lenovo\neo4j\conf:/var/lib/neo4j/conf</p>
+<p>日志：C:\Users\lenovo\neo4j\logs:/logs</p>
+<p>2.修改conf配置，设置权限（必须）：</p>
+<p>在本地的conf路径打开conf文件，加入以下2行：</p>
+<p>dbms.security.procedures.unrestricted=apoc.*</p>
+<p>dbms.security.procedures.allowlist=apoc.*</p>
+<p>3.添加apoc插件（必须）：</p>
+<p>创建本地的plugins目录：</p>
+<p>mkdir neo4j/plugins</p>
+<p>把和neoj4同版本的apoc插件包放到本地的plugins目录下</p>
+<p>把本地的apoc插件包cp到容器中：</p>
+<p>docker cp C:\Users\lenovo\neo4j\plugins\apoc-5.26.19-core.jar [容器名]:/var/lib/neo4j/plugins</p>
+<p>重启容器</p>
+<p>docker restart [容器名]</p>
+<p>持久化：</p>
+<p>只要创建neo4j容器时挂载了本地目录：</p>
+<p>--volume=C:\Users\lenovo\neo4j\data:/data</p>
+<p>数据文件就会存到本地这个目录</p>
+<p>——————————————</p>
+<p>端口使用</p>
+<p>1.登录容器：</p>
+<p>http://localhost:7476</p>
+<p>输入用户名密码</p>
+<p>2.在浏览器查看图：</p>
+<p>使用cypher查询语言。</p>
+<p>（可以在左侧选图谱视图、json视图等）</p>
+<p>查看整个图：</p>
+<p>MATCH (n) RETURN n</p>
+<p>查看所有关系：（没有关系的节点不会出现）</p>
+<p>MATCH (a)-[r]->(b) RETURN a,r,b</p>
+<p>*******************************</p>
+<p>3.下次调用已有的图谱：</p>
+<p>1）启动docker程序</p>
+<p>2）在shell用docker命令打开容器：</p>
+<p>docker start xxx</p>
+<p>3）在浏览器打开端口登录 http://localhost:7475</p>
+<p>在python文件中调用：</p>
+<p>（初始化也是用这个）</p>
+<p>load_dotenv()</p>
+<p>graph = Neo4jGraph(</p>
+<p>url=url,</p>
+<p>username=username,</p>
+<p>password=password,</p>
+<p>)</p>
+<p>——————————————</p>
+<p>报错：</p>
+<p>1.docker那边的问题，查看日志，可以看到报错原因</p>
+<p>docker logs medigraph --tail 100</p>
+<p>2.容器一直加载中，浏览器端口打不开：</p>
+<p>可能是用户名写错了</p>
+<p>3.浏览器一直登录不上：Neo.ClientError.Security.Unauthorized: The client is unauthorized due to aut</p>
+<p>解决：</p>
+<p>1）删除C:\Users\lenovo\neo4j\data\dbms下面的auth文件</p>
+<p>2）在终端里：docker restart 容器名</p>
+<p>3）重新进浏览器端口，输入正确的用户名密码即可</p>
+  </div>
+</body>
+</html>

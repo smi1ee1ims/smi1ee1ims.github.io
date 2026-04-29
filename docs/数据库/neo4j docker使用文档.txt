@@ -1,0 +1,74 @@
+创建一个新的neo4j数据库（容器）流程：
+
+1.在shell创建容器：
+docker run -d --name [容器名] --restart=always --publish=7476:7474 --publish=7689:7687 `
+--env NEO4J_AUTH=neo4j/12345678 `
+--volume=D:\Desktop\学校\大四\毕业论文\project\[容器名]\data:/data `
+--volume=D:\Desktop\学校\大四\毕业论文\project\[容器名]\conf:/var/lib/neo4j/conf `
+--volume=D:\Desktop\学校\大四\毕业论文\project\[容器名]\logs:/logs `
+neo4j:5.26.19
+
+挂载到了本地目录，这个图谱的数据等会存到本地的对应路径下：
+数据：C:\Users\lenovo\neo4j\data:/data 
+配置：C:\Users\lenovo\neo4j\conf:/var/lib/neo4j/conf 
+日志：C:\Users\lenovo\neo4j\logs:/logs 
+
+2.修改conf配置，设置权限（必须）：
+在本地的conf路径打开conf文件，加入以下2行：
+dbms.security.procedures.unrestricted=apoc.*
+dbms.security.procedures.allowlist=apoc.*
+
+3.添加apoc插件（必须）：
+创建本地的plugins目录：
+mkdir neo4j/plugins
+把和neoj4同版本的apoc插件包放到本地的plugins目录下
+把本地的apoc插件包cp到容器中：
+docker cp C:\Users\lenovo\neo4j\plugins\apoc-5.26.19-core.jar [容器名]:/var/lib/neo4j/plugins
+重启容器
+docker restart [容器名]
+
+持久化：
+只要创建neo4j容器时挂载了本地目录：
+--volume=C:\Users\lenovo\neo4j\data:/data 
+数据文件就会存到本地这个目录
+——————————————
+端口使用
+1.登录容器：
+http://localhost:7476
+输入用户名密码
+
+2.在浏览器查看图：
+使用cypher查询语言。
+（可以在左侧选图谱视图、json视图等）
+查看整个图：
+MATCH (n) RETURN n
+查看所有关系：（没有关系的节点不会出现）
+MATCH (a)-[r]->(b) RETURN a,r,b
+
+*******************************
+3.下次调用已有的图谱：
+1）启动docker程序
+2）在shell用docker命令打开容器：
+	docker start xxx
+3）在浏览器打开端口登录 http://localhost:7475
+在python文件中调用：
+（初始化也是用这个）
+load_dotenv()
+graph = Neo4jGraph(
+    url=url,
+    username=username,
+    password=password,
+)
+
+——————————————
+报错：
+1.docker那边的问题，查看日志，可以看到报错原因
+docker logs medigraph --tail 100
+2.容器一直加载中，浏览器端口打不开：
+可能是用户名写错了
+3.浏览器一直登录不上：Neo.ClientError.Security.Unauthorized: The client is unauthorized due to aut
+	解决：
+		1）删除C:\Users\lenovo\neo4j\data\dbms下面的auth文件
+		2）在终端里：docker restart 容器名
+		3）重新进浏览器端口，输入正确的用户名密码即可
+	
