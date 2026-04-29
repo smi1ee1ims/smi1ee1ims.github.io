@@ -10,10 +10,10 @@
 <p>创建一个新的neo4j数据库（容器）流程：</p>
 <p>1.在shell创建容器：</p>
 <p>docker run -d --name [容器名] --restart=always --publish=7476:7474 --publish=7689:7687 `<br>
---env NEO4J_AUTH=neo4j/12345678 `<br>
---volume=D:\Desktop\学校\大四\毕业论文\project\[容器名]\data:/data `<br>
---volume=D:\Desktop\学校\大四\毕业论文\project\[容器名]\conf:/var/lib/neo4j/conf `<br>
---volume=D:\Desktop\学校\大四\毕业论文\project\[容器名]\logs:/logs `<br>
+--env NEO4J_AUTH=用户名/密码 `<br>
+--volume=D:\……\[容器名]\data:/data `<br>
+--volume=D:\……\[容器名]\conf:/var/lib/neo4j/conf `<br>
+--volume=D:\……\[容器名]\logs:/logs `<br>
 neo4j:5.26.19</p>
 <p>挂载到了本地目录，这个图谱的数据等会存到本地的对应路径下：</p>
 <p>数据：C:\Users\lenovo\neo4j\data:/data</p>
@@ -69,7 +69,7 @@ neo4j:5.26.19</p>
 <p>可能是用户名写错了</p>
 <p>3.浏览器一直登录不上：Neo.ClientError.Security.Unauthorized: The client is unauthorized due to aut</p>
 <p>解决：</p>
-<p>1）删除C:\Users\lenovo\neo4j\data\dbms下面的auth文件</p>
+<p>1）删除C:\……\neo4j\data\dbms下面的auth文件</p>
 <p>2）在终端里：docker restart 容器名</p>
 <p>3）重新进浏览器端口，输入正确的用户名密码即可</p>
   </div>
